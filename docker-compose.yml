@@ -3,10 +3,9 @@ services:
     image: ${APP_IMAGE}
     container_name: sbcc-app
     environment:
-      # maps to your application.properties keys
       MONGODB_CONNECTION_STRING: ${MONGODB_CONNECTION_STRING}
       JWT_SECRET_BASE64: ${JWT_SECRET_BASE64}
       SPRING_PROFILES_ACTIVE: docker
     ports:
-      - "${APP_PORT}:8085"   # app listens on 8085
+      - "${APP_PORT}:8085"
     restart: unless-stopped
